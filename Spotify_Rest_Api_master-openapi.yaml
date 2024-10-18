@@ -1,0 +1,70 @@
+openapi: "3.1.0"
+info:
+  title: "Spotify_Rest_Api_master API"
+  description: "Spotify_Rest_Api_master API"
+  version: "1.0.0"
+servers:
+  - url: "https://Spotify_Rest_Api_master"
+paths:
+  /auth/login:
+    post:
+      summary: "POST auth/login"
+      operationId: "Login"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "string"
+  /codechallenge/createTrack:
+    post:
+      summary: "POST codechallenge/createTrack"
+      operationId: "createTrack"
+      parameters:
+        - name: "isrc"
+          in: "query"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "string"
+  /codechallenge/getTrackMetadata:
+    get:
+      summary: "GET codechallenge/getTrackMetadata"
+      operationId: "getTrackMetadata"
+      parameters:
+        - name: "isrc"
+          in: "query"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "string"
+  /codechallenge/getCover:
+    get:
+      summary: "GET codechallenge/getCover"
+      operationId: "getCover"
+      parameters:
+        - name: "isrc"
+          in: "query"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "string"

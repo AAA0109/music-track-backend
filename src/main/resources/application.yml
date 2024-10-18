@@ -1,0 +1,35 @@
+# Spring Boot configuration
+spring:
+  profiles:
+    active: development
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/musicdb
+    username: postgres
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework: INFO
+    org.hibernate: DEBUG
+server:
+  port: 8080
+  session:
+    timeout: 30
+security:
+  user:
+    name: user
+    password: user
+allow:
+  clients: http://localhost:3000
+# Spotify Client configuration
+spotify:
+  clientId: 96772c78486b43e087dcfec94d808456
+  clientSecret: 1e6ed13302e64464a79daabac841fc26
